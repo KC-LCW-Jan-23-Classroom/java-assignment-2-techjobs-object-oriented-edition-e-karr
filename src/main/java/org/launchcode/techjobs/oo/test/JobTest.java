@@ -78,4 +78,14 @@ public class JobTest {
 
         assertEquals(expectedValue, actualValue);
     }
+
+    @Test
+    public void testToStringHandlesJobWithOnlyIdData() {
+        Job test1 = new Job();
+
+        String expectedValue = "OOPS! This job does not seem to exist";
+        String actualValue = test1.toString();
+
+        assertEquals(expectedValue, actualValue);
+    }
 }

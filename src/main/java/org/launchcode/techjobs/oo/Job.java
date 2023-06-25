@@ -49,12 +49,17 @@ public class Job {
     @Override
     public String toString() {
         String returnValue = "";
-        returnValue += "\nID: " + (this.getId() > 0 ? this.getId() : "Data not available");
-        returnValue += "\nName: " + (this.getName() == null || this.getName().equals("") ? "Data not available" : this.getName());
-        returnValue += "\nEmployer: " + (this.getEmployer().getValue() == null || this.getEmployer().getValue().equals("") ? "Data not available" : this.getEmployer().getValue());
-        returnValue += "\nLocation: " + (this.getLocation().getValue() == null || this.getLocation().getValue().equals("") ? "Data not available" : this.getLocation().getValue());
-        returnValue += "\nPosition Type: " + (this.getPositionType().getValue() == null || this.getPositionType().getValue().equals("") ? "Data not available" : this.getPositionType().getValue());
-        returnValue += "\nCore Competency: " + (this.getCoreCompetency().getValue() == null || this.getCoreCompetency().getValue().equals("") ? "Data not available" : this.getCoreCompetency().getValue()) + '\n';
+
+        if(name == null && employer == null && location == null && positionType == null && coreCompetency == null) {
+            returnValue = "OOPS! This job does not seem to exist";
+        } else {
+            returnValue += "\nID: " + (this.getId() > 0 ? this.getId() : "Data not available");
+            returnValue += "\nName: " + (this.getName() == null || this.getName().equals("") ? "Data not available" : this.getName());
+            returnValue += "\nEmployer: " + (this.getEmployer().getValue() == null || this.getEmployer().getValue().equals("") ? "Data not available" : this.getEmployer().getValue());
+            returnValue += "\nLocation: " + (this.getLocation().getValue() == null || this.getLocation().getValue().equals("") ? "Data not available" : this.getLocation().getValue());
+            returnValue += "\nPosition Type: " + (this.getPositionType().getValue() == null || this.getPositionType().getValue().equals("") ? "Data not available" : this.getPositionType().getValue());
+            returnValue += "\nCore Competency: " + (this.getCoreCompetency().getValue() == null || this.getCoreCompetency().getValue().equals("") ? "Data not available" : this.getCoreCompetency().getValue()) + '\n';
+        }
 
         return returnValue;
     }
