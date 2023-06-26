@@ -92,7 +92,7 @@ public class JobTest {
     );
 
     String expectedValue =
-      "\nID: 1\nName: Product tester\nEmployer: ACME\nLocation: Desert\nPosition Type: Quality control\nCore Competency: Persistence\n";
+      "\nID: " + test1.getId() + "\nName: Product tester\nEmployer: ACME\nLocation: Desert\nPosition Type: Quality control\nCore Competency: Persistence\n";
 
     String actualValue = test1.toString();
 
@@ -103,14 +103,14 @@ public class JobTest {
   public void testToStringHandlesEmptyField() {
     Job test1 = new Job(
       "Product tester",
-      new Employer(),
+      new Employer(""),
       new Location(""),
       new PositionType("Quality control"),
-      new CoreCompetency()
+      new CoreCompetency("")
     );
 
     String expectedValue =
-      "\nID: 1\nName: Product tester\nEmployer: Data not available\nLocation: Data not available\nPosition Type: Quality control\nCore Competency: Data not available\n";
+      "\nID: " + test1.getId() + "\nName: Product tester\nEmployer: Data not available\nLocation: Data not available\nPosition Type: Quality control\nCore Competency: Data not available\n";
 
     String actualValue = test1.toString();
 
