@@ -92,7 +92,7 @@ public class JobTest {
     );
 
     String expectedValue =
-      "\nID: " + test1.getId() + "\nName: Product tester\nEmployer: ACME\nLocation: Desert\nPosition Type: Quality control\nCore Competency: Persistence\n";
+      "\nID: 1\nName: Product tester\nEmployer: ACME\nLocation: Desert\nPosition Type: Quality control\nCore Competency: Persistence\n";
 
     String actualValue = test1.toString();
 
@@ -110,7 +110,7 @@ public class JobTest {
     );
 
     String expectedValue =
-      "\nID: " + test1.getId() + "\nName: Product tester\nEmployer: Data not available\nLocation: Data not available\nPosition Type: Quality control\nCore Competency: Data not available\n";
+      "\nID: 1\nName: Product tester\nEmployer: Data not available\nLocation: Data not available\nPosition Type: Quality control\nCore Competency: Data not available\n";
 
     String actualValue = test1.toString();
 
